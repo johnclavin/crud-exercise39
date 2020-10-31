@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Horseface App</title>
+</head>
+
+<body>
+  <h1>Let's Get On With It!</h1>
+  <p>Learning Express, Mongodb, and EJS</p>
+
+  <form action="/quotes" method="POST">
+    <input type="text" placeholder="name" name="name">
+    <input type="text" placeholder="quote" name="quote">
+    <button type="submit">Submit</button>
+  </form>
+
+  <h2> Quotes </h2>
+  <ul class="quotes">
+    <% for(var i = 0; i < quotes.length; i++) {%>
+    <li class="quote">
+      <span><%= quotes[i].name %></span>:
+      <span><%= quotes[i].quote %></span>
+    </li>
+    <% } %>
+  </ul>
+
+  <div>
+    <h2>Update Quote</h2>
+      <button id='update-button'>Replace Quote</button>
+  </div>
+  <div>
+    <button id='delete-button'>Delete Quote</button>
+  </div>
+  <script src='/main.js'></script>
+</body>
+
+</html>
